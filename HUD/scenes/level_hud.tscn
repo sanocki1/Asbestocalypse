@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbhohxmvb5mdb"]
+[gd_scene format=3 uid="uid://cbhohxmvb5mdb"]
 
 [ext_resource type="Texture2D" uid="uid://dolu2adcteqv4" path="res://HUD/assets/Coin.png" id="1_dpd7h"]
-[ext_resource type="Script" path="res://HUD/scripts/LevelHud.cs" id="1_fw0at"]
+[ext_resource type="Script" uid="uid://ch1arma468yv8" path="res://HUD/scripts/LevelHud.cs" id="1_fw0at"]
 [ext_resource type="Texture2D" uid="uid://dgisgxvc57qp7" path="res://HUD/assets/lemur_1.png" id="2_k4r3e"]
 [ext_resource type="Texture2D" uid="uid://dqpii2ej5v67e" path="res://HUD/assets/lemur_2.png" id="3_qum8x"]
 
@@ -32,7 +32,7 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[node name="LevelHud" type="Control"]
+[node name="LevelHud" type="Control" unique_id=1209430546]
 z_index = 1
 layout_mode = 3
 anchors_preset = 15
@@ -42,7 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fw0at")
 
-[node name="Vault" type="Control" parent="."]
+[node name="Vault" type="Control" parent="." unique_id=261185714]
 layout_mode = 1
 anchors_preset = 0
 offset_left = 194.0
@@ -50,7 +50,7 @@ offset_top = -1.0
 offset_right = 314.0
 offset_bottom = 129.0
 
-[node name="VaultLabel" type="Label" parent="Vault"]
+[node name="VaultLabel" type="Label" parent="Vault" unique_id=744458583]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -68,7 +68,7 @@ theme_override_font_sizes/font_size = 40
 text = "300$"
 horizontal_alignment = 1
 
-[node name="VaultTexture" type="TextureRect" parent="Vault"]
+[node name="VaultTexture" type="TextureRect" parent="Vault" unique_id=1544673859]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -84,114 +84,115 @@ grow_vertical = 2
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_dpd7h")
 
-[node name="SideMenu" type="PanelContainer" parent="."]
+[node name="SideMenu" type="PanelContainer" parent="." unique_id=1239449899]
 custom_minimum_size = Vector2(0, 648)
 layout_mode = 0
 offset_left = 940.0
 offset_right = 1152.0
 offset_bottom = 648.0
+focus_behavior_recursive = 1
 
-[node name="SideMenuBackground" type="Panel" parent="SideMenu"]
+[node name="SideMenuBackground" type="Panel" parent="SideMenu" unique_id=1385607220]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kswmq")
 
-[node name="MarginContainer" type="MarginContainer" parent="SideMenu"]
+[node name="MarginContainer" type="MarginContainer" parent="SideMenu" unique_id=2034747237]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SideMenu/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SideMenu/MarginContainer" unique_id=1929051366]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="SideMenu/MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="SideMenu/MarginContainer/HBoxContainer" unique_id=1515100162]
 layout_mode = 2
 
-[node name="VBoxContainer1" type="VBoxContainer" parent="SideMenu/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer1" type="VBoxContainer" parent="SideMenu/MarginContainer/HBoxContainer" unique_id=1365879064]
 layout_mode = 2
 
-[node name="MarginContainer1" type="MarginContainer" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer1"]
+[node name="MarginContainer1" type="MarginContainer" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer1" unique_id=56707186]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="Panel1" type="Panel" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer1"]
+[node name="Panel1" type="Panel" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer1" unique_id=1032250841]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bi8pm")
 
-[node name="TextureRect" type="TextureRect" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer1/Panel1"]
+[node name="TextureRect" type="TextureRect" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer1/Panel1" unique_id=2083908876]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_k4r3e")
 
-[node name="SelectLemur1" type="Button" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer1/Panel1"]
+[node name="SelectLemur1" type="Button" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer1/Panel1" unique_id=317397395]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/hover = SubResource("StyleBoxFlat_u1sbu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_u1sbu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_u1sbu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u1sbu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u1sbu")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="SideMenu/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="SideMenu/MarginContainer/HBoxContainer" unique_id=1366467060]
 layout_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="MarginContainer2" type="MarginContainer" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1239752429]
 layout_mode = 2
 
-[node name="Panel2" type="Panel" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="Panel2" type="Panel" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=835627157]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bi8pm")
 
-[node name="TextureRect" type="TextureRect" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer2/Panel2"]
+[node name="TextureRect" type="TextureRect" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer2/Panel2" unique_id=502902710]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_qum8x")
 
-[node name="SelectLemur2" type="Button" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer2/Panel2"]
+[node name="SelectLemur2" type="Button" parent="SideMenu/MarginContainer/HBoxContainer/VBoxContainer2/Panel2" unique_id=132982341]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/hover = SubResource("StyleBoxFlat_ytnqy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ytnqy")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ytnqy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ytnqy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ytnqy")
 
-[node name="MarginContainer2" type="MarginContainer" parent="SideMenu/MarginContainer/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="SideMenu/MarginContainer/HBoxContainer" unique_id=1526907227]
 layout_mode = 2
 
-[node name="SellButton" type="Button" parent="SideMenu/MarginContainer"]
+[node name="SellButton" type="Button" parent="SideMenu/MarginContainer" unique_id=1616365714]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_styles/hover = SubResource("StyleBoxFlat_sn2l3")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sn2l3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_sn2l3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sn2l3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sn2l3")
 text = "SELL $"
 
-[node name="Healthbar" type="Control" parent="."]
+[node name="Healthbar" type="Control" parent="." unique_id=169867127]
 anchors_preset = 0
 offset_left = 12.0
 offset_top = 12.0
 offset_right = 52.0
 offset_bottom = 52.0
 
-[node name="HealthBackground" type="ColorRect" parent="Healthbar"]
+[node name="HealthBackground" type="ColorRect" parent="Healthbar" unique_id=1118907924]
 layout_mode = 0
 offset_right = 194.0
 offset_bottom = 40.0
 color = Color(0, 0, 0, 1)
 
-[node name="HealthForeground" type="ColorRect" parent="Healthbar"]
+[node name="HealthForeground" type="ColorRect" parent="Healthbar" unique_id=928006392]
 layout_mode = 0
 offset_right = 194.0
 offset_bottom = 40.0
 color = Color(1, 0, 0, 1)
 
-[node name="HealthAmount" type="Label" parent="Healthbar"]
+[node name="HealthAmount" type="Label" parent="Healthbar" unique_id=1986846691]
 layout_mode = 0
 offset_right = 194.0
 offset_bottom = 40.0
