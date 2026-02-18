@@ -58,10 +58,6 @@ public partial class LevelHud : Control
 
 	public Boolean SpendCoins(int coins)
 	{
-		/*
-		* Tries to spend coins. If enough coins are available, it returns true and deducts coins.
-		* If there are not enough coins, it returns false and does not change the coin amount.
-		*/
 		if (_coinAmount >= coins)
 		{
 			_coinAmount -= coins;

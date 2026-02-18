@@ -24,12 +24,19 @@ public partial class Level : Node2D
 	public override void _Process(double delta)
 	{
 		_spawnTimer += (float)delta;
-
 		if (_spawnTimer >= spawnTime)
 		{
 			SpawnEnemy();
 		}
 	}
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("escape_button"))
+		{
+			GetTree().Paused = !GetTree().Paused; // TODO: this needs to open a menu scene, where you can quit or resume
+		}
+    }
 
 	private void SpawnEnemy()
 	{

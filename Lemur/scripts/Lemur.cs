@@ -30,9 +30,8 @@ public partial class Lemur : StaticBody2D
 	{
 		if (_isPlaced)
 		{
-			HandleShooting(delta);  //consider separating target selection and shooting into separate methods for clarity
+			HandleShooting(delta);
 		}
-
 	}
 
 	private void OnLemurRangeAreaEntered(Area2D enemy)
@@ -72,11 +71,16 @@ public partial class Lemur : StaticBody2D
 		{
 			QueueFree();
 		}
+		 else if (!CanBePlaced() && Input.IsActionJustPressed("left_mouse_click"))
+		{
+			QueueFree();
+		}
 
-		if (CanBePlaced() && Input.IsActionJustPressed("left_mouse_click"))
+		else if (CanBePlaced() && Input.IsActionJustPressed("left_mouse_click"))
 		{
 			PlaceLemur();
 		}
+
 	}
 
 	private bool CanBePlaced()
@@ -84,7 +88,7 @@ public partial class Lemur : StaticBody2D
 		return _collisionsDetected == 0 && !_isPlaced && IsWithinScreenBounds();
 	}
 
-		private void OnLemurHitboxBodyEntered(StaticBody2D body)
+	private void OnLemurHitboxBodyEntered(StaticBody2D body)
 	{
 		UpdateCollisionsDetected(1);
 	}
